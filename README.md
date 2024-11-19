@@ -13,4 +13,14 @@ AI for the pictures,
 
 # Link to the App
 
+## Authors
+
+- [@gallerymiguel](https://github.com/gallerymiguel)
+
+- [@Thymezz](https://github.com/Thymezz)
+
+- [@ImThisHannah](https://github.com/ImThisHannah)
+
+-[@josh-hensley](https://github.com/josh-hensley)
+
 
