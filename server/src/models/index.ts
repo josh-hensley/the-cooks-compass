@@ -15,7 +15,10 @@ const sequelize = process.env.DB_URL
     });
 
 const User = UserFactory(sequelize);
+//  const Favorite = FavoriteFactory(sequelize);
+//  const MealPlan = MealPlanFactory(sequelize);
 
-// User.hasMany(Ticket, { foreignKey: '' });
+// User.hasMany(Favorite, { foreignKey: '' });
+// User.hasMany(MealPlan, { foreignKey: '' });
 
 export { sequelize, User };
