@@ -1,5 +1,5 @@
-import { config } from 'dotenv';
-config();
+import dotenv from 'dotenv';
+dotenv.config();
 
 import { Sequelize } from 'sequelize';
 import { UserFactory } from './user.js';
