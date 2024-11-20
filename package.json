@@ -1,0 +1,13 @@
+{
+  "name": "the-cooks-compass",
+  "version": "1.0.0",
+  "description": "description goes here",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "cd client && npm run build && cd ../server && npm run build"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}
