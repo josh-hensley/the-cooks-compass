@@ -155,3 +155,101 @@
             }
         });
     </script>
+
+    
+    <!-- Main Content Sections -->
+
+    <!-- Create Meal Plan Page -->
+    <section id="createMealPlan" style="display: none;">
+      <div class="container text-center">
+          <h2 class="display-5">Create Meal Plan</h2>
+          <div class="input-container mt-4">
+              <label for="meal-plan-name" class="form-label">Name your plan:</label>
+              <input type="text" class="form-control" id="meal-plan-name" placeholder="Enter meal plan name">
+          </div>
+          <button class="btn btn-success btn-next mt-4" id="nextMealPlanButton">Next</button>
+      </div>
+  </section>
+
+  <!-- Meal Plan Detail Page -->
+  <section id="mealPlanView" style="display: none;">
+      <div class="container text-center">
+          <h2 class="display-5">Meal Plan Name</h2>
+          <div class="shopping-list mt-4">
+              <h4>Shopping List</h4>
+              <p>Items for the meal plan will be displayed here.</p>
+          </div>
+          <div class="meal-plan-grid mt-4">
+              <!-- Display meal plans as a grid of cards -->
+              <div class="row">
+                  <div class="col-12 meal-card">
+                      <img src="https://via.placeholder.com/100" alt="Meal Image">
+                      <p>Recipe Title</p>
+                  </div>
+                  <!-- Repeat for each meal -->
+              </div>
+          </div>
+      </div>
+  </section>
+
+  <!-- Recipe Detail Page -->
+  <section id="recipeView" style="display: none;">
+      <div class="container">
+          <h2 class="display-5">Recipe Name</h2>
+          <div class="row mt-4">
+              <div class="col-md-8 macros">
+                  <h4>Macros</h4>
+                  <p>Calories: 400 kcal</p>
+                  <p>Protein: 25g</p>
+                  <p>Fat: 20g</p>
+                  <p>Carbohydrates: 35g</p>
+              </div>
+              <div class="col-md-4 text-center">
+                  <img src="https://via.placeholder.com/150" alt="Recipe Image" class="recipe-img">
+              </div>
+          </div>
+          <div class="ingredients mt-4">
+              <h4>Ingredients</h4>
+              <ul>
+                  <li>2 cups flour</li>
+                  <li>1 cup sugar</li>
+                  <li>1/2 cup butter</li>
+              </ul>
+          </div>
+          <div class="directions mt-4">
+              <h4>Directions</h4>
+              <ol>
+                  <li>Preheat the oven to 350°F.</li>
+                  <li>Mix ingredients.</li>
+                  <li>Bake for 25-30 minutes.</li>
+              </ol>
+          </div>
+      </div>
+  </section>
+
+  <!-- JavaScript to Toggle Pages -->
+  <script>
+      function showSection(sectionId) {
+          document.querySelectorAll('section').forEach(section => {
+              section.style.display = 'none';
+          });
+          document.getElementById(sectionId).style.display = 'block';
+      }
+
+      document.getElementById('nextMealPlanButton').addEventListener('click', () => {
+          const mealPlanName = document.getElementById('meal-plan-name').value.trim();
+          if (mealPlanName === "") {
+              alert('Please enter a name for your meal plan.');
+          } else {
+              showSection('mealPlanView');
+          }
+      });
+
+      // Example navigation: call showSection('sectionId') to show any page
+  </script>
+
+  <!-- Bootstrap JS (Popper.js included) -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>
