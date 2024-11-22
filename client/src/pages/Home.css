@@ -1,0 +1,56 @@
+/* General styles for the home page */
+.home-page {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+  }
+  
+  /* Hero banner styles */
+  .hero-banner {
+    background-image: url('../assets/hero.png'); /* Replace with your image URL */
+    background-size: cover;
+    background-position: center;
+    height: 900px; /* Adjust the height as needed */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    text-align: center;
+    padding: 20px;
+  }
+  
+  .hero-content h1 {
+    font-size: 3rem;
+    margin-bottom: 10px;
+  }
+  
+  .hero-content p {
+    font-size: 1.25rem;
+  }
+  
+  /* Call to action section */
+  .cta-section {
+    background-color: #f8f9fa;
+    padding: 50px 20px;
+    text-align: center;
+  }
+  
+  .cta-section h2 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+  }
+  
+  .cta-button {
+    font-size: 1.25rem;
+    padding: 10px 20px;
+    background-color: #007bff; /* Bootstrap primary color */
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+  }
+  
+  .cta-button:hover {
+    background-color: #0056b3;
+  }
+  
