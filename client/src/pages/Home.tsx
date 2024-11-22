@@ -8,8 +8,6 @@ const HomePage: React.FC = () => {
       {/* Hero Banner */}
       <section className="hero-banner">
         <div className="hero-content">
-          <h1>Welcome to The Cook's Compass</h1>
-          <p>Your go-to app to discover, save, and share your favorite recipes!</p>
         </div>
       </section>
 

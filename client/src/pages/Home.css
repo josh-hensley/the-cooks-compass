@@ -8,15 +8,15 @@
   /* Hero banner styles */
   .hero-banner {
     background-image: url('../assets/hero.png'); /* Replace with your image URL */
-    background-size: cover;
+    background-size: contain;
     background-position: center;
-    height: 900px; /* Adjust the height as needed */
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    background-repeat: no-repeat;
+    height: 500px; /* Adjust the height as needed */ 
     color: white;
     text-align: center;
     padding: 20px;
+    -webkit-mask-image: linear-gradient(to right, rgba(0, 0, 0, 0) 50%, rgba(0, 0, 0, 1) 50%, rgba(0, 0, 0, 0) 99%);
+    mask-image: linear-gradient(to right, rgba(0, 0, 0, 0) 1%, rgba(0, 0, 0, 1) 40%, rgba(0, 0, 0, 0) 99%);
   }
   
   .hero-content h1 {
