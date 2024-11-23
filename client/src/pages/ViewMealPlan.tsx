@@ -8,7 +8,7 @@ ChartJS.register(ArcElement, Tooltip, Legend);
 
 const ViewMealPlan: React.FC = () => {
     const mealPlan = {
-        name: "Name of Meal Plan",
+        name: "Keto Focus Week",
         ingredients: ["Chicken Breast", "Avocado", "Spinach"],
         macros: {
             protein: 120,
