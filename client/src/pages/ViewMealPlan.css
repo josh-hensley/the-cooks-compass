@@ -48,3 +48,13 @@
     height: auto; /* Maintain aspect ratio */
     margin-bottom: 10px;
 }
+
+.recipe-category {
+    display: block;
+    background-color: #ffcc00;
+    color: #fff;
+    text-align: center;
+    padding: 5px 0;
+    border-radius: 5px;
+    margin-top: 5px;
+}

@@ -16,8 +16,8 @@ const ViewMealPlan: React.FC = () => {
             fats: 90
         },
         recipes: [
-            { name: "Grilled Chicken Breast", image: "path_to_image" },
-            { name: "Avocado Salad", image: "path_to_image" }
+            { name: "Grilled Chicken Breast", image: "/sample.jpg", category: "Lunch" },
+            { name: "Avocado Salad", image: "/sample.jpg", category: "Dinner" }
         ]
     };
 
@@ -35,10 +35,10 @@ const ViewMealPlan: React.FC = () => {
         plugins: {
             legend: {
                 display: true,
-                position: 'bottom' as const
+                position: 'bottom'
             },
             tooltip: {
-                mode: 'index' as const,
+                mode: 'index',
                 intersect: false
             }
         }
@@ -75,6 +75,7 @@ const ViewMealPlan: React.FC = () => {
                     <div key={index} className="recipe-card">
                         <img src={recipe.image} alt={recipe.name} style={{ width: "100%", height: "auto" }} />
                         <p>{recipe.name}</p>
+                        <span className="recipe-category">{recipe.category}</span>
                     </div>
                 ))}
             </div>
