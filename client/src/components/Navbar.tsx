@@ -1,4 +1,5 @@
-import 'bootstrap/dist/css/bootstrap.min.css';
+import 'bootstrap/dist/css/bootstrap.min.css';  // for styling
+import 'bootstrap/dist/js/bootstrap.bundle.min.js';  // for JavaScript functionality (includes popper)
 import React from 'react';
 import { Link } from 'react-router-dom';
 
