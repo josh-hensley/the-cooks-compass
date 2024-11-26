@@ -1,17 +1,20 @@
-const SignUp: React.FC = () => <h1>Sign-Up Page</h1>;
+//const SignUp: React.FC = () => <h1>Sign-Up Page</h1>;
 import React, { useState } from 'react';
+import styles from './page4.css'; 
 
-function SignUpPage() {
+function SignupForm() { 
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
   const [email, setEmail] = useState('');
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    // Handle form submission here, e.g., send data to server
+    // Add form validation here (optional)
+    // You can check for empty fields, password length etc.
     console.log('Username:', username);
     console.log('Password:', password);
     console.log('Email:', email);
+    // Send data to server (optional)
   };
 
   return (
@@ -42,4 +45,4 @@ function SignUpPage() {
   );
 }
 
-export default SignUp;
+export default SignupForm;
