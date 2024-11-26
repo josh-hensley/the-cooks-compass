@@ -1,5 +1,5 @@
-import 'bootstrap/dist/css/bootstrap.min.css';  // for styling
-import 'bootstrap/dist/js/bootstrap.bundle.min.js';  // for JavaScript functionality (includes popper)
+import 'bootstrap/dist/css/bootstrap.min.css'; // for styling
+import 'bootstrap/dist/js/bootstrap.bundle.min.js'; // for JavaScript functionality (includes popper)
 import React from 'react';
 import { Link } from 'react-router-dom';
 
@@ -7,9 +7,7 @@ const Navbar: React.FC = () => {
   return (
     <nav className="navbar navbar-expand-lg navbar-light bg-light">
       <div className="container-fluid">
-        <Link className="navbar-brand" to="/">
-          The Cook's Compass
-        </Link>
+        <Link className="navbar-brand" to="/">The Cook's Compass</Link>
         <button
           className="navbar-toggler"
           type="button"
@@ -24,29 +22,25 @@ const Navbar: React.FC = () => {
         <div className="collapse navbar-collapse" id="navbarNav">
           <ul className="navbar-nav ms-auto">
             <li className="nav-item">
-              <Link className="nav-link" to="/" >
-                Home
-              </Link>
+              <Link className="nav-link" to="/">Home</Link>
             </li>
             <li className="nav-item">
-              <Link className="nav-link" to="/browse">
-                Browse Recipes
-              </Link>
+              <Link className="nav-link" to="/browse">Browse Recipes</Link>
             </li>
             <li className="nav-item">
-              <Link className="nav-link" to="/dashboard">
-                Dashboard
-              </Link>
+              <Link className="nav-link" to="/dashboard">Dashboard</Link>
             </li>
             <li className="nav-item">
-              <Link className="nav-link" to="/login">
+              <button
+                className="btn btn-link nav-link"
+                data-bs-toggle="modal"
+                data-bs-target="#loginModal"
+              >
                 Login
-              </Link>
+              </button>
             </li>
             <li className="nav-item">
-              <Link className="nav-link" to="/signup">
-                Sign-Up
-              </Link>
+              <Link className="nav-link" to="/signup">Sign-Up</Link>
             </li>
           </ul>
         </div>
