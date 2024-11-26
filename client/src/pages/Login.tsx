@@ -1,5 +1,4 @@
-const Login: React.FC = () => <h1>Login Page</h1>;
-
+//const Login: React.FC = () => <h1>Login Page</h1>;
 
 import React, { useState } from 'react';
 

@@ -10,11 +10,11 @@ function SignupForm() {
   const handleSubmit = (e) => {
     e.preventDefault();
     // Add form validation here (optional)
-    // You can check for empty fields, password length etc.
+  
     console.log('Username:', username);
     console.log('Password:', password);
     console.log('Email:', email);
-    // Send data to server (optional)
+    
   };
 
   return (
