@@ -7,6 +7,8 @@ import Dashboard from "./pages/Dashboard.tsx";
 import Login from "./pages/Login";
 import SignUp from "./pages/Signup";
 import Navbar from "./components/Navbar";
+import CreateMealPlan from "./pages/CreateMealPlan";
+import ViewMealPlan from "./pages/ViewMealPlan";
 
 const App: React.FC = () => {
   return (
@@ -20,6 +22,8 @@ const App: React.FC = () => {
         <Route path="/dashboard" element={<Dashboard />} />
         <Route path="/login" element={<Login />} />
         <Route path="/signup" element={<SignUp />} />
+        <Route path="/createmealplan" element={<CreateMealPlan/>} />
+        <Route path="/viewmealplan" element={<ViewMealPlan/>} />
       </Routes>
       </div>
       </div>

@@ -25,6 +25,9 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "bootstrap": "^5.3.3"
+    "bootstrap": "^5.3.3",
+    "chart.js": "^4.4.6",
+    "react-chartjs-2": "^5.2.0",
+    "react-minimal-pie-chart": "^8.4.1"
   }
 }

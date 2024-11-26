@@ -1,0 +1,60 @@
+/* Add this to your stylesheet */
+.container {
+    font-family: Arial, sans-serif; /* Standard font; replace as needed */
+}
+
+.header {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.row {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+}
+
+.box {
+    border: 2px solid #000; /* Black border for the boxes */
+    padding: 10px;
+    flex: 1; /* Flexible boxes that share available space */
+    margin-right: 20px; /* Space between boxes */
+    border-radius: 20px;
+}
+
+.box:last-child {
+    margin-right: 0; /* No margin on the right side for the last box */
+}
+
+.box h2 {
+    border-bottom: 1px solid #000; /* Underline for headers in boxes */
+    padding-bottom: 5px;
+    margin-bottom: 10px;
+}
+
+.recipe-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* 3 columns */
+    gap: 20px;
+}
+
+.recipe-card {
+    text-align: center;
+}
+
+.recipe-card img {
+    width: 100%; /* Full width of the card */
+    max-width: 150px; /* Maximum width */
+    height: auto; /* Maintain aspect ratio */
+    margin-bottom: 10px;
+}
+
+.recipe-category {
+    display: block;
+    background-color: #ffcc00;
+    color: #fff;
+    text-align: center;
+    padding: 5px 0;
+    border-radius: 5px;
+    margin-top: 5px;
+}
