@@ -1,0 +1,63 @@
+.dashboard {
+    width: 90%;
+    margin: auto;
+    text-align: center;
+}
+
+.section {
+    margin-bottom: 30px;
+    padding: 20px;
+    border-radius: 15px; /* Adds rounded corners to each section */
+    background-color: #f4f4f4; /* Light background color for each section */
+    
+}
+
+.favorites {
+    border: 2px solid #ffab00; /* Specific color for favorites */
+    padding-top: 20px;
+    border-radius: 15px;
+    padding-left: 15px;
+}
+
+.meal-plans {
+    border: 2px solid #00c4ff; /* Specific color for meal plans */
+    margin-top: 20px;
+    padding-top: 20px;
+    border-radius: 15px;
+    padding-left: 15px;
+}
+
+.carousel {
+    display: flex;
+    overflow-x: auto;
+    gap: 20px;
+    margin-bottom: 30px;
+    margin-top: 20px;
+}
+
+.item {
+    flex: 0 0 auto;
+    width: 200px;
+    border: 1px solid #ccc;
+    padding: 10px;
+    border-radius: 15px;
+    background-color: #fff;
+}
+
+.item img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+}
+
+.btn {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: blue;
+    color: white;
+    text-decoration: none;
+    margin-top: 20px;
+    border-radius: 8px;
+    width: 40%;
+}
+
