@@ -52,11 +52,13 @@ export function UserFactory(sequelize: Sequelize): typeof User {
       },
       meal_plan_ids: {
         type: DataTypes.ARRAY(DataTypes.NUMBER),
-        allowNull: true
+        allowNull: false,
+        defaultValue: []
       },
       favorite_ids: {
         type: DataTypes.ARRAY(DataTypes.NUMBER),
-        allowNull: true
+        allowNull: false,
+        defaultValue: []
       }
     },
     {
