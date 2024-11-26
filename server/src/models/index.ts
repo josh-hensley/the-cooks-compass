@@ -20,8 +20,8 @@ const User = UserFactory(sequelize);
 const Favorite = FavoriteFactory(sequelize);
 const MealPlan = MealPlanFactory(sequelize);
 
-User.hasMany(Favorite, { foreignKey: 'favorite_id' });
-User.hasMany(MealPlan, { foreignKey: 'meal_plan_id' });
-MealPlan.hasMany(Favorite, { foreignKey: 'favorite_id' });
+User.hasMany(Favorite, { foreignKey: 'favorite_ids' });
+User.hasMany(MealPlan, { foreignKey: 'meal_plan_ids' });
+MealPlan.hasMany(Favorite, { foreignKey: 'favorite_ids' });
 
 export { sequelize, User };

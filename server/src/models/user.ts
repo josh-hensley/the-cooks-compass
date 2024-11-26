@@ -6,6 +6,8 @@ interface UserAttributes {
   username: string;
   password: string;
   email: string;
+  meal_plan_ids: number[];
+  favorite_ids: number[];
 }
 
 interface UserCreationAttributes extends Optional<UserAttributes, 'id'> {}
@@ -15,6 +17,8 @@ export class User extends Model<UserAttributes, UserCreationAttributes> implemen
   public username!: string;
   public password!: string;
   public email!: string;
+  public meal_plan_ids!: number[];
+  public favorite_ids!: number[];
 
   public readonly createdAt!: Date;
   public readonly updatedAt!: Date;
@@ -46,6 +50,14 @@ export function UserFactory(sequelize: Sequelize): typeof User {
         type: DataTypes.STRING,
         allowNull: false,
       },
+      meal_plan_ids: {
+        type: DataTypes.ARRAY(DataTypes.NUMBER),
+        allowNull: true
+      },
+      favorite_ids: {
+        type: DataTypes.ARRAY(DataTypes.NUMBER),
+        allowNull: true
+      }
     },
     {
       tableName: 'users',

@@ -4,8 +4,8 @@ import { Favorite } from '../models/favorite.js';
 // GET /Favorites
 export const getAllFavorites = async (_req: Request, res: Response) => {
   try {
-    const Favorites = await Favorite.findAll();
-    res.json(Favorites);
+    const favorites = await Favorite.findAll();
+    res.json(favorites);
   } catch (error: any) {
     res.status(500).json({ message: error.message });
   }
