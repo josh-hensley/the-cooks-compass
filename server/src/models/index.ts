@@ -3,6 +3,8 @@ dotenv.config();
 
 import { Sequelize } from 'sequelize';
 import { UserFactory } from './user.js';
+import { RecipeFactory } from './recipe.js';
+import { MealPlanFactory } from './meal-plan.js';
 
 const sequelize = process.env.DB_URL
   ? new Sequelize(process.env.DB_URL)
@@ -15,10 +17,10 @@ const sequelize = process.env.DB_URL
     });
 
 const User = UserFactory(sequelize);
-//  const Favorite = FavoriteFactory(sequelize);
-//  const MealPlan = MealPlanFactory(sequelize);
+const Recipe = RecipeFactory(sequelize);
+const MealPlan = MealPlanFactory(sequelize);
 
-// User.hasMany(Favorite, { foreignKey: '' });
-// User.hasMany(MealPlan, { foreignKey: '' });
+User.hasMany(Recipe, { foreignKey: 'recipe_id' });
+MealPlan.hasMany(Recipe, { foreignKey: 'recipe_id' });
 
 export { sequelize, User };
