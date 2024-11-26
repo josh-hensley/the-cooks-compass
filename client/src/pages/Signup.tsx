@@ -1,8 +1,7 @@
-//const SignUp: React.FC = () => <h1>Sign-Up Page</h1>;
 import React, { useState } from 'react';
 import styles from './page4.css'; 
 
-function SignupForm() { 
+function SignupForm(): React { 
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
   const [email, setEmail] = useState('');
