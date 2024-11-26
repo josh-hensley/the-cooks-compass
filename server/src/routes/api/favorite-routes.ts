@@ -8,16 +8,16 @@ import {
 
 const router = express.Router();
 
-// GET /Favoritess - Get all Favoritess
+// GET /Favoritess - Get all Favorites
 router.get('/', getAllFavorites);
 
-// GET /Favoritess/:id - Get a Favorites by id
+// GET /Favoritess/:id - Get a Favorite by id
 router.get('/:id', getFavoriteById);
 
-// POST /Favoritess - Create a new Favorites
+// POST /Favoritess - Create a new Favorite
 router.post('/', createFavorite);
 
-// DELETE /Favoritess/:id - Delete a Favorites by id
+// DELETE /Favoritess/:id - Delete a Favorite by id
 router.delete('/:id', deleteFavorite);
 
-export { router as FavoritesRouter };
+export { router as favoritesRouter };

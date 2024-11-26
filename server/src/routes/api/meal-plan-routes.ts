@@ -1,27 +1,27 @@
 import express from 'express';
 import {
-  getAllUsers,
-  getUserById,
-  createUser,
-  updateUser,
-  deleteUser,
-} from '../../controllers/user-controller.js';
+  getAllMealPlans,
+  getMealPlanById,
+  createMealPlan,
+  updateMealPlan,
+  deleteMealPlan,
+} from '../../controllers/meal-plan-controller.js';
 
 const router = express.Router();
 
-// GET /users - Get all users
-router.get('/', getAllUsers);
+// GET /MealPlans - Get all MealPlans
+router.get('/', getAllMealPlans);
 
-// GET /users/:id - Get a user by id
-router.get('/:id', getUserById);
+// GET /MealPlans/:id - Get a MealPlan by id
+router.get('/:id', getMealPlanById);
 
-// POST /users - Create a new user
-router.post('/', createUser);
+// POST /MealPlans - Create a new MealPlan
+router.post('/', createMealPlan);
 
-// PUT /users/:id - Update a user by id
-router.put('/:id', updateUser);
+// PUT /MealPlans/:id - Update a MealPlan by id
+router.put('/:id', updateMealPlan);
 
-// DELETE /users/:id - Delete a user by id
-router.delete('/:id', deleteUser);
+// DELETE /MealPlans/:id - Delete a MealPlan by id
+router.delete('/:id', deleteMealPlan);
 
-export { router as userRouter };
+export { router as mealPlanRouter };
