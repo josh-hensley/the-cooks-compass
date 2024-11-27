@@ -161,6 +161,13 @@
     transition: background-color 0.2s ease;
 }
 
+.clickable-title {
+    color: blue;
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+
 .add-button:hover {
     background-color: #218838;
 }
@@ -168,4 +175,8 @@
 ul {
     display: flex;
     justify-content: space-between;
+}
+
+p {
+    margin-bottom: 0 !important;
 }
