@@ -1,0 +1,64 @@
+/* Overall page styling */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f0f0f0;
+}
+
+/* Header styling */
+header {
+    background-color: #333;
+    color: #fff;
+    padding: 10px; 
+}
+
+header h1 {
+    margin: 0;
+}
+
+header nav {
+    float: right;
+}
+
+header nav a {
+    color: #fff;
+    text-decoration: none;
+    margin-right: 20px;
+}
+
+/* Search bar styling */
+.search-bar {
+    width: 400px;
+    margin: 20px auto;
+}
+
+.search-bar input[type="text"] {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+/* Recipe card styling */
+.recipe-card {
+    border: 1px solid #ccc;
+    padding: 20px;
+    margin-bottom: 20px;
+    display: inline-block;
+    width: 25%;
+    box-sizing: border-box;
+}
+
+.recipe-card img {
+    width: 100%;
+    height: auto;
+}
+
+.recipe-card h2 {
+    margin-top: 0;
+}
+
+.recipe-card p {
+    margin: 0;
+}

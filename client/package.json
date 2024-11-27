@@ -7,11 +7,8 @@
     "preview": "vite preview"
   },
   "dependencies": {
-<<<<<<< Updated upstream
-=======
     "@types/bootstrap": "^5.2.10",
     "bootstrap": "^5.3.3",
->>>>>>> Stashed changes
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
     "react-router-dom": "^6.28.0"
