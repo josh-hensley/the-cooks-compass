@@ -1,17 +1,31 @@
-import React from 'react';
+import React, { useState, FormEvent, ChangeEvent } from 'react';
+import Auth from '../utils/auth.js'
+import { login } from "../api/authAPI.js"
 
 const Login: React.FC = () => {
-  const handleLogin = () => {
-    const username = (document.getElementById('login-username') as HTMLInputElement).value;
-    const password = (document.getElementById('login-password') as HTMLInputElement).value;
-    if (!username || !password) {
-      alert('Please fill out both fields!');
-      return;
-    }
-    alert(`Welcome back, ${username}!`);
-    const modalElement = document.getElementById('loginModal');
-    if (modalElement) {
-      (window as any).bootstrap.Modal.getInstance(modalElement).hide();
+  const [errorText, setErrorText] = useState('');
+  const [loginData, setLoginData] = useState({
+    username:'',
+    password:''
+  });
+  const handleChange = (e: ChangeEvent<HTMLInputElement | HTMLSelectElement>)=>{
+    const { name, value } = e.target;
+    setLoginData({
+      ...loginData,
+      [name]:value
+    })
+  }
+  const handleLogin = async (e: FormEvent) => {
+    e.preventDefault();
+    try {
+      const data = await login(loginData);
+      Auth.login(data.token);
+      if (!data.ok){
+        throw new Error('Invalid login credentials');
+      }
+    } catch (error) {
+      setErrorText(`${error}`);
+      console.error('Failed to login', error);
     }
   };
 
@@ -37,6 +51,7 @@ const Login: React.FC = () => {
                   className="form-control"
                   id="login-username"
                   placeholder="Enter username"
+                  onChange={handleChange}
                 />
               </div>
               <div className="mb-3">
@@ -46,7 +61,11 @@ const Login: React.FC = () => {
                   className="form-control"
                   id="login-password"
                   placeholder="Enter password"
+                  onChange={handleChange}
                 />
+              </div>
+              <div>
+                <p>{errorText}</p>
               </div>
             </form>
           </div>
