@@ -1,12 +1,12 @@
-import React, { useState } from 'react';
-import styles from './page4.css'; 
+import React, { FormEvent, FormEventHandler, useState } from 'react';
+// import styles from './page4.css'; 
 
-function SignupForm(): React { 
+const SignupForm: React.FC = () => { 
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
   const [email, setEmail] = useState('');
 
-  const handleSubmit = (e) => {
+  const handleSubmit: FormEventHandler = (e: FormEvent) => {
     e.preventDefault();
     // Add form validation here (optional)
     // You can check for empty fields, password length etc.
