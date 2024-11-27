@@ -30,7 +30,7 @@ export function MealPlanFactory(sequelize: Sequelize): typeof MealPlan {
         allowNull: false
       },
       favorite_ids: {
-        type: DataTypes.ARRAY(DataTypes.NUMBER),
+        type: DataTypes.ARRAY(DataTypes.INTEGER),
         allowNull: false,
         defaultValue: []
       }

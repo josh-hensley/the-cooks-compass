@@ -1,4 +1,4 @@
-import { MealPlan } from "../models/meal-plan";
+import { MealPlan } from "../models/meal-plan.js";
 
 export const seedMealPlans = async () => {
   await MealPlan.bulkCreate([
