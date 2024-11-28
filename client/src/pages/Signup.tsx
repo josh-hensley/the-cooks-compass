@@ -8,12 +8,6 @@ const SignupForm: React.FC = () => {
 
   const handleSubmit: FormEventHandler = (e: FormEvent) => {
     e.preventDefault();
-    // Add form validation here (optional)
-    // You can check for empty fields, password length etc.
-    console.log('Username:', username);
-    console.log('Password:', password);
-    console.log('Email:', email);
-    // Send data to server (optional)
   };
 
   return (
