@@ -1,8 +1,18 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
+import auth from '../utils/auth.js'
 import { Link } from 'react-router-dom'; // If you are using React Router for navigation
 import './Dashboard.css'; // Import the CSS file for styling
 
 const Dashboard: React.FC = () => {
+    const [loginCheck, setLoginCheck]=useState(false);
+    const checkLogin = ()=>{
+        if(auth.loggedIn()) {
+            setLoginCheck(true);
+        }
+    }
+    useEffect(()=>{
+        checkLogin();
+    })
     // Placeholder data
     const username = "User"; // This will be dynamic based on user login
     const favorites = [
@@ -16,7 +26,14 @@ const Dashboard: React.FC = () => {
     ];
 
     return (
-        <div className="dashboard">
+        <>
+        {
+            !loginCheck ? (
+            <div className="warning">
+                <h1>Login to view Deashboard</h1>
+            </div>
+        ):(
+            <div className="dashboard">
             <h1>Welcome, {username}!</h1>
             <div className="favorites">
                 <h2>Favorites</h2>
@@ -42,6 +59,8 @@ const Dashboard: React.FC = () => {
             </div>
             <Link to="/createmealplan" className="btn btn-primary">Make a meal plan!</Link>
         </div>
+        )}</>
+        
     );
 };
 
