@@ -1,7 +1,7 @@
 import { UserData } from '../interfaces/UserData.js';
 import auth from '../utils/auth.js'
 
-const getUserData = async (id: number) => {
+const getUser = async (id: number) => {
     try {
         const response = await fetch(`/api/users/${id}`, {
             headers: {
@@ -20,7 +20,7 @@ const getUserData = async (id: number) => {
     }
 }
 
-const updateUserData = async (id: number, newUserData: UserData) => {
+const updateUser = async (id: number, newUserData: UserData) => {
     try { 
         const response = await fetch(`/api/users/${id}`, {
             method: 'PUT',
@@ -82,4 +82,4 @@ const deleteUser = async (id: number) => {
     }
 }
 
-export { getUserData, updateUserData, createUser, deleteUser };
+export { getUser, updateUser, createUser, deleteUser };
