@@ -1,9 +1,19 @@
 import 'bootstrap/dist/css/bootstrap.min.css'; // for styling
 import 'bootstrap/dist/js/bootstrap.bundle.min.js'; // for JavaScript functionality (includes popper)
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
+import auth from '../utils/auth.js'
 
 const Navbar: React.FC = () => {
+  const [loginCheck, setLoginCheck] = useState(false);
+  const checkLogin = () => {
+    if (auth.loggedIn()) {
+      setLoginCheck(true);
+    }
+  }
+  useEffect(()=>{
+    checkLogin();
+  }, [loginCheck])
   return (
     <nav className="navbar navbar-expand-lg navbar-light bg-light">
       <div className="container-fluid">
@@ -21,31 +31,28 @@ const Navbar: React.FC = () => {
         </button>
         <div className="collapse navbar-collapse" id="navbarNav">
           <ul className="navbar-nav ms-auto">
-            <li className="nav-item">
-              <Link className="nav-link" to="/">Home</Link>
-            </li>
-            <li className="nav-item">
-              <Link className="nav-link" to="/browse">Browse Recipes</Link>
-            </li>
-            <li className="nav-item">
-              <Link className="nav-link" to="/dashboard">Dashboard</Link>
-            </li>
-            <li className="nav-item">
-              <button
-                className="btn btn-link nav-link"
-                data-bs-toggle="modal"
-                data-bs-target="#loginModal"
-              >
-                Login
-              </button>
-            </li>
-            <li className="nav-item">
-              <Link className="nav-link" to="/signup">Sign-Up</Link>
-            </li>
+            {
+              !loginCheck ? (
+                <><li className="nav-item">
+                  <Link className='nav-link' to='/' data-bs-toggle="modal" data-bs-target="#loginModal">Login</Link>
+                </li><li className="nav-item">
+                  <Link className="nav-link" to="/signup">Sign-Up</Link>
+                </li></>
+              ):(
+                <><li className="nav-item">
+                  <Link className="nav-link" to="/browse">Browse Recipes</Link>
+                </li><li className="nav-item">
+                  <Link className="nav-link" to="/dashboard">Dashboard</Link>
+                </li>
+                <li>
+                  <Link className='nav-link' to="" onClick={()=>{auth.logout()}} >Logout</Link>
+                </li></>
+              )
+            } 
           </ul>
         </div>
-      </div>
-    </nav>
+      </div >
+    </nav >
   );
 };
 

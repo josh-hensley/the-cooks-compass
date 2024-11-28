@@ -45,21 +45,23 @@ const Login: React.FC = () => {
           <div className="modal-body">
             <form>
               <div className="mb-3">
-                <label htmlFor="login-username" className="form-label">Username</label>
+                <label htmlFor="username" className="form-label">Username</label>
                 <input
                   type="text"
                   className="form-control"
-                  id="login-username"
+                  name='username'
+                  value={loginData.username || ''}
                   placeholder="Enter username"
                   onChange={handleChange}
                 />
               </div>
               <div className="mb-3">
-                <label htmlFor="login-password" className="form-label">Password</label>
+                <label htmlFor="password" className="form-label">Password</label>
                 <input
                   type="password"
                   className="form-control"
-                  id="login-password"
+                  name='password'
+                  value={loginData.password || ''}
                   placeholder="Enter password"
                   onChange={handleChange}
                 />
