@@ -1,4 +1,3 @@
-
 import React, { useState } from 'react';
 import axios from 'axios';
 
@@ -49,5 +48,6 @@ const BrowseRecipes: React.FC = () => {
         </div>
     );
 };
+
 
 export default BrowseRecipes;

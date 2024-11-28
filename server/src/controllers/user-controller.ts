@@ -32,9 +32,9 @@ export const getUserById = async (req: Request, res: Response) => {
 
 // POST /Users
 export const createUser = async (req: Request, res: Response) => {
-  const { username, password } = req.body;
+  const { username, password, email, favorite_ids, meal_plan_ids } = req.body;
   try {
-    const newUser = await User.create({ username, password });
+    const newUser = await User.create({ username, password, email, favorite_ids, meal_plan_ids });
     res.status(201).json(newUser);
   } catch (error: any) {
     res.status(400).json({ message: error.message });
@@ -44,12 +44,15 @@ export const createUser = async (req: Request, res: Response) => {
 // PUT /Users/:id
 export const updateUser = async (req: Request, res: Response) => {
   const { id } = req.params;
-  const { username, password } = req.body;
+  const { username, password, email, favorite_ids, meal_plan_ids } = req.body;
   try {
     const user = await User.findByPk(id);
     if (user) {
       user.username = username;
       user.password = password;
+      user.email = email;
+      user.favorite_ids = favorite_ids;
+      user.meal_plan_ids = meal_plan_ids;
       await user.save();
       res.json(user);
     } else {

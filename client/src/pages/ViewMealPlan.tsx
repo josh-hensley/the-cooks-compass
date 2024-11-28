@@ -30,19 +30,19 @@ const ViewMealPlan: React.FC = () => {
         }]
     };
 
-    const options = {
-        maintainAspectRatio: false,
-        plugins: {
-            legend: {
-                display: true,
-                position: 'bottom'
-            },
-            tooltip: {
-                mode: 'index',
-                intersect: false
-            }
-        }
-    };
+    // const options: ChartOptions = {
+    //     maintainAspectRatio: false,
+    //     plugins: {
+    //         legend: {
+    //             display: true,
+    //             position: 'bottom'
+    //         },
+    //         tooltip: {
+    //             mode: 'index',
+    //             intersect: false
+    //         }
+    //     }
+    // };
 
     return (
         <div className="container">
@@ -61,7 +61,19 @@ const ViewMealPlan: React.FC = () => {
                 <div className="box">
                     <h2>Total Macros</h2>
                     <div style={{ height: '200px' }}>
-                        <Pie data={data} options={options} />
+                        <Pie data={data} options={{
+                            maintainAspectRatio: false,
+                            plugins: {
+                                legend: {
+                                    display: true,
+                                    position: 'bottom'
+                                },
+                                tooltip: {
+                                    mode: 'index',
+                                    intersect: false
+                                }
+                            }
+                        }} />
                     </div>
                     <div>
                         <p>Protein: {mealPlan.macros.protein}g</p>

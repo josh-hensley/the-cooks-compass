@@ -15,7 +15,7 @@ const CreateMealPlan: React.FC = () => {
 
   useEffect(() => {
     const loadRecipes = async () => {
-      const recipes = await fetchMockRecipes(); // Fetch mock recipes
+      const recipes = await fetchMockRecipes() as any[]; // Fetch mock recipes
       setRecipes(recipes); // Set full recipe list
       setFilteredRecipes(recipes); // Initialize filtered list
     };
