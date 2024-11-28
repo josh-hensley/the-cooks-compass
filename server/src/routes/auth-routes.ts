@@ -27,9 +27,28 @@ export const login = async (req: Request, res: Response) => {
   }
 };
 
+export const newLogin = async (req: Request, res: Response) => {
+  try {
+    const { username, email } = req.body;
+    const identical = await User.findOne({
+      where: { username, email }
+    });
+    if (identical){
+      return res.status(401).json({ message: 'User already exists' });
+    }
+    const secretKey = process.env.JWT_SECRET_KEY || '';
+    const token = jwt.sign({ username }, secretKey, { expiresIn: '1h' });
+    return res.json({ token });
+  } catch (err: any) {
+    console.error(err.message)
+    return res.status(500).json({ message: 'Something went wrong' })
+  }
+}
+
 const router = Router();
 
 // POST /login - Login a user
 router.post('/login', login);
+router.post('/new', newLogin);
 
 export default router;
