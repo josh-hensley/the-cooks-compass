@@ -23,6 +23,4 @@ const login = async (userInfo: UserLogin) => {
   }
 }
 
-
-
 export { login };
