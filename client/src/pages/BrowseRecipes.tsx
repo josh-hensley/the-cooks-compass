@@ -1,7 +1,17 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
+import auth from '../utils/auth.js';
 import axios from 'axios';
 
 const BrowseRecipes: React.FC = () => {
+    const [loginCheck, setLoginCheck] =  useState(false);
+    const checkLogin = () => {
+        if (auth.loggedIn()){
+            setLoginCheck(true);
+        }
+    }
+    useEffect(()=>{
+        checkLogin();
+    }, [loginCheck])
     const [searchText, setSearchText] = useState('');
     const [recipes, setRecipes] = useState([]);
     const API_KEY = 'your_api_key'; // Replace with your API key
@@ -48,6 +58,5 @@ const BrowseRecipes: React.FC = () => {
         </div>
     );
 };
-
 
 export default BrowseRecipes;

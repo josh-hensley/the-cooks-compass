@@ -1,17 +1,31 @@
-import React from 'react';
+import React, { useState, FormEvent, ChangeEvent } from 'react';
+import Auth from '../utils/auth.js'
+import { login } from "../api/authAPI.js"
 
 const Login: React.FC = () => {
-  const handleLogin = () => {
-    const username = (document.getElementById('login-username') as HTMLInputElement).value;
-    const password = (document.getElementById('login-password') as HTMLInputElement).value;
-    if (!username || !password) {
-      alert('Please fill out both fields!');
-      return;
-    }
-    alert(`Welcome back, ${username}!`);
-    const modalElement = document.getElementById('loginModal');
-    if (modalElement) {
-      (window as any).bootstrap.Modal.getInstance(modalElement).hide();
+  const [errorText, setErrorText] = useState('');
+  const [loginData, setLoginData] = useState({
+    username:'',
+    password:''
+  });
+  const handleChange = (e: ChangeEvent<HTMLInputElement | HTMLSelectElement>)=>{
+    const { name, value } = e.target;
+    setLoginData({
+      ...loginData,
+      [name]:value
+    })
+  }
+  const handleLogin = async (e: FormEvent) => {
+    e.preventDefault();
+    try {
+      const data = await login(loginData);
+      Auth.login(data.token);
+      if (!data.ok){
+        throw new Error('Invalid login credentials');
+      }
+    } catch (error) {
+      setErrorText(`${error}`);
+      console.error('Failed to login', error);
     }
   };
 
@@ -31,22 +45,29 @@ const Login: React.FC = () => {
           <div className="modal-body">
             <form>
               <div className="mb-3">
-                <label htmlFor="login-username" className="form-label">Username</label>
+                <label htmlFor="username" className="form-label">Username</label>
                 <input
                   type="text"
                   className="form-control"
-                  id="login-username"
+                  name='username'
+                  value={loginData.username || ''}
                   placeholder="Enter username"
+                  onChange={handleChange}
                 />
               </div>
               <div className="mb-3">
-                <label htmlFor="login-password" className="form-label">Password</label>
+                <label htmlFor="password" className="form-label">Password</label>
                 <input
                   type="password"
                   className="form-control"
-                  id="login-password"
+                  name='password'
+                  value={loginData.password || ''}
                   placeholder="Enter password"
+                  onChange={handleChange}
                 />
+              </div>
+              <div>
+                <p>{errorText}</p>
               </div>
             </form>
           </div>

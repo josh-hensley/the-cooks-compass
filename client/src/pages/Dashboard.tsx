@@ -1,9 +1,19 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
+import auth from '../utils/auth.js'
 import { Link } from 'react-router-dom';
 import { searchRecipes, fetchRecipeDetails } from '../api/api'; // Import from your API file
 import './Dashboard.css';
 
 const Dashboard: React.FC = () => {
+    const [loginCheck, setLoginCheck]=useState(false);
+    const checkLogin = ()=>{
+        if(auth.loggedIn()) {
+            setLoginCheck(true);
+        }
+    }
+    useEffect(()=>{
+        checkLogin();
+    })
     const username = "User";
     const [favorites, setFavorites] = useState<
         { id: number; title: string; image: string; calories: number; protein: number; carbs: number; fat: number }[]
@@ -56,7 +66,14 @@ const Dashboard: React.FC = () => {
     };
 
     return (
-        <div className="dashboard">
+        <>
+        {
+            !loginCheck ? (
+            <div className="warning">
+                <h1>Login to view Deashboard</h1>
+            </div>
+        ):(
+            <div className="dashboard">
             <h1>Welcome, {username}!</h1>
 
             {/* Favorites Carousel */}
@@ -149,6 +166,8 @@ const Dashboard: React.FC = () => {
 
             <Link to="/createmealplan" className="btn btn-primary">Make a meal plan!</Link>
         </div>
+        )}</>
+        
     );
 };
 
