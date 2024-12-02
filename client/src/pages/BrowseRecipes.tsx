@@ -14,7 +14,7 @@ const BrowseRecipes: React.FC = () => {
     }, [loginCheck])
     const [searchText, setSearchText] = useState('');
     const [recipes, setRecipes] = useState([]);
-    const API_KEY = 'your_api_key'; // Replace with your API key
+    const API_KEY = import.meta.env.VITE_SPOONACULAR_API_KEY; // Replace with your API key
 
     const fetchRecipes = async (query: string) => {
         try {
@@ -41,7 +41,7 @@ const BrowseRecipes: React.FC = () => {
                 className="search-bar"
             />
             <ul className="dropdown-list">
-                {recipes.map((recipe) => (
+                {recipes.map((recipe: {id: string, sourceUrl: string, title: string}) => (
                     <li key={recipe.id} className="dropdown-item">
                         <span
                             className="recipe-title"
