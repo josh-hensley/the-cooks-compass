@@ -3,6 +3,7 @@ import 'bootstrap/dist/js/bootstrap.bundle.min.js'; // for JavaScript functional
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import auth from '../utils/auth.js'
+import './Navbar.css';
 
 const Navbar: React.FC = () => {
   const [loginCheck, setLoginCheck] = useState(false);
