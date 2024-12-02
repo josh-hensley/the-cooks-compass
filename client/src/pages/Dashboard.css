@@ -4,6 +4,14 @@
     text-align: center;
 }
 
+.dashboard h1 {
+    color: chocolate;
+}
+
+.dashboard h2 {
+    color: chocolate;
+}
+
 .section {
     margin-bottom: 30px;
     padding: 20px;
