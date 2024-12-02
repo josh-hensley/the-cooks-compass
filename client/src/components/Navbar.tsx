@@ -14,6 +14,12 @@ const Navbar: React.FC = () => {
   useEffect(()=>{
     checkLogin();
   }, [loginCheck])
+
+  const handleLogout = ()=>{
+    auth.logout();
+    localStorage.removeItem("user");
+  }
+
   return (
     <nav className="navbar navbar-expand-lg navbar-light bg-light">
       <div className="container-fluid">
@@ -45,7 +51,7 @@ const Navbar: React.FC = () => {
                   <Link className="nav-link" to="/dashboard">Dashboard</Link>
                 </li>
                 <li>
-                  <Link className='nav-link' to="" onClick={()=>{auth.logout()}} >Logout</Link>
+                  <Link className='nav-link' to="" onClick={handleLogout} >Logout</Link>
                 </li></>
               )
             } 

@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-const API_KEY = '3488bc35686749f88fd9fc7bbcd968f5'; // Replace with your Spoonacular API key
+const API_KEY = import.meta.env.VITE_SPOONACULAR_API_KEY; // Replace with your Spoonacular API key
 const BASE_URL = 'https://api.spoonacular.com';
 
 // Search for recipes (general search)
