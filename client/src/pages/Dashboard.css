@@ -12,6 +12,9 @@
     color: chocolate;
 }
 
+.dashboard h3{
+    color: chocolate;
+}
 .section {
     margin-bottom: 30px;
     padding: 20px;
@@ -20,14 +23,14 @@
 }
 
 .favorites {
-    border: 2px solid #ffab00; /* Specific color for favorites */
+    border: 2px solid hsl(40, 100%, 50%); /* Specific color for favorites */
     padding-top: 20px;
     border-radius: 15px;
     padding-left: 15px;
 }
 
 .meal-plans {
-    border: 2px solid #00c4ff; /* Specific color for meal plans */
+    border: 2px solid hsl(40, 100%, 50%); /* Specific color for meal plans */
     margin-top: 20px;
     padding-top: 20px;
     border-radius: 15px;
@@ -82,7 +85,7 @@
     display: block;
     width: 100%;
     padding: 10px;
-    border: 2px solid #ccc;
+    border: 2px solid hsl(40, 100%, 50%);
     border-radius: 8px;
     font-size: 16px;
     outline: none;
