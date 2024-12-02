@@ -1,5 +1,6 @@
 import React, { ChangeEvent, FormEvent, FormEventHandler, useState } from 'react';
 import { createUser } from '../api/userAPI.js';
+import './Signup.css';
 
 const SignupForm: React.FC = () => {
   const [formData, setFormData] = useState({
