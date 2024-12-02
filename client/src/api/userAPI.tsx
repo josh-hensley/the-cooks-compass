@@ -1,6 +1,10 @@
 import { UserData } from '../interfaces/UserData.js';
 import auth from '../utils/auth.js'
 
+const getAllUsers = async () {
+    
+}
+
 const getUser = async (id: number) => {
     try {
         const response = await fetch(`/api/users/${id}`, {

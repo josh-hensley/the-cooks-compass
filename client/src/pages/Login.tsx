@@ -1,6 +1,7 @@
 import React, { useState, FormEvent, ChangeEvent } from 'react';
 import Auth from '../utils/auth.js'
 import { login } from "../api/authAPI.js"
+import { getUser } from '../api/userAPI.js';
 
 const Login: React.FC = () => {
   const [errorText, setErrorText] = useState('');
@@ -20,6 +21,8 @@ const Login: React.FC = () => {
     try {
       const data = await login(loginData);
       Auth.login(data.token);
+      const user = await getUser(data.user_id);
+      localStorage.setItem("user", JSON.stringify(user));
       if (!data.ok){
         throw new Error('Invalid login credentials');
       }
