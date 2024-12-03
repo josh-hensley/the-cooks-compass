@@ -42,7 +42,7 @@
 ### 2. Backend
 - **Node.js**: A JavaScript runtime for building scalable server-side applications.
 - **Express**: A lightweight framework for routing and middleware.
-- **Database**: Check what is the DB that we used? 
+- **Database**: we are using PostgreSQL for DB
 
 ### 3. Tooling and Utilities
 - **ESLint**: To enforce code quality and consistent style.
@@ -71,7 +71,7 @@ To get started, follow these steps:
     cd server
     npm start
 5. **Access the Application:**
-     Open your browser and navigate to http://localhost:3000 (default port for Vite).
+     Open your browser and navigate to (https://the-cooks-compass.onrender.com/).
 
 
 
